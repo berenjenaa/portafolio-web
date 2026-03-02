@@ -1,59 +1,76 @@
-# PortafolioBenjamin
+# Benjamín Olave Barraza — Portafolio Web
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.0.
+Portafolio personal desarrollado en **Angular 21** con arquitectura moderna de componentes standalone, Signals y SSR. Diseño tipo terminal: fondos oscuros, acentos en rojo y texto de alto contraste.
 
-## Development server
+[![Angular](https://img.shields.io/badge/Angular-21-dd0031?style=flat-square&logo=angular)](https://angular.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
+[![SSR](https://img.shields.io/badge/SSR-habilitado-222?style=flat-square)](https://angular.dev/guide/ssr)
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## Secciones
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+| Sección            | Descripción                                                    |
+| ------------------ | -------------------------------------------------------------- |
+| **Hero**           | Presentación profesional con terminal decorativo animado       |
+| **About**          | Enfoque en arquitectura Full Stack y proyectos en producción   |
+| **Skills**         | Stack técnico: Frontend & Mobile + Backend, Data & Cloud       |
+| **Projects**       | MisBoletas · TI-Pulse · Data-Sync Bot                          |
+| **Certifications** | SQL (Basic) — HackerRank · Diseño Web — AIEP / Telefónica      |
+| **Contact**        | Formulario reactivo con validación + links a GitHub y LinkedIn |
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Stack del portafolio
 
-```bash
-ng generate component component-name
-```
+- **Framework:** Angular 21 — Standalone Components, Signals, `ChangeDetectionStrategy.OnPush`
+- **Lenguaje:** TypeScript 5.9
+- **Renderizado:** Server-Side Rendering (SSR) con `@angular/ssr` + Express
+- **Estilos:** CSS puro moderno — Flexbox, Grid, Variables CSS, sin librerías externas
+- **Control Flow:** Sintaxis moderna `@for`, `@if` (Angular 17+)
+- **Testing:** Vitest
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Correr localmente
 
 ```bash
-ng test
+# Instalar dependencias
+npm install
+
+# Servidor de desarrollo (http://localhost:4200)
+npm start
+
+# Build de producción
+npm run build
+
+# Servidor SSR (producción)
+npm run serve:ssr:portafolio-benjamin
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## Estructura del proyecto
 
-```bash
-ng e2e
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── hero/           # Sección de presentación
+│   │   ├── about/          # Sobre mí
+│   │   ├── skills/         # Habilidades técnicas
+│   │   ├── projects/       # Proyectos desarrollados
+│   │   ├── certifications/ # Certificaciones
+│   │   └── contact/        # Formulario de contacto
+│   ├── app.ts
+│   ├── app.html
+│   └── app.config.ts
+└── styles.css              # Variables CSS y estilos globales
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## Contacto
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **GitHub:** [@berenjenaa](https://github.com/berenjenaa)
+- **LinkedIn:** [Benjamín Olave](https://linkedin.com/in/benjamín-olave-721ba82bb/)
