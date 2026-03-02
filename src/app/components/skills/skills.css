@@ -1,0 +1,188 @@
+/* ===========================
+   SKILLS COMPONENT
+   =========================== */
+
+.skills {
+  background-color: var(--bg-primary);
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.skills::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.skills__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ---- Encabezado ---- */
+.skills__header {
+  margin-bottom: 3.5rem;
+}
+
+.skills__subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+}
+
+.skills__count {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ---- Layout: 2 columnas ---- */
+.skills__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ---- Cabecera de categoría ---- */
+.skills__category-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.skills__category-icon {
+  font-size: 1rem;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.skills__category-title {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.skills__category-count {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  background: rgba(230, 57, 70, 0.08);
+  border: 1px solid rgba(230, 57, 70, 0.2);
+  border-radius: 100px;
+  padding: 0.1rem 0.55rem;
+}
+
+/* ---- Grid de habilidades ---- */
+/* Ambas categorías usan 2 columnas — Frontend: 2×2, Backend: 3×2 */
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+/* ---- Tarjeta de habilidad ---- */
+.skill-card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: default;
+  transition:
+    border-color var(--transition),
+    transform    var(--transition),
+    box-shadow   var(--transition);
+}
+
+.skill-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(230, 57, 70, 0.12);
+}
+
+/* Monograma de tecnología */
+.skill-card__abbr {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: rgba(230, 57, 70, 0.07);
+  border: 1px solid rgba(230, 57, 70, 0.2);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.skill-card:hover .skill-card__abbr {
+  background: rgba(230, 57, 70, 0.15);
+  border-color: rgba(230, 57, 70, 0.45);
+}
+
+.skill-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.skill-card__name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color var(--transition);
+}
+
+.skill-card:hover .skill-card__name {
+  color: #ffffff;
+}
+
+.skill-card__desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 900px) {
+  .skills__layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills { padding: 4rem 1.25rem; }
+
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+}

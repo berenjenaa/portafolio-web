@@ -1,0 +1,145 @@
+/* ===========================
+   PROJECTS COMPONENT
+   =========================== */
+
+.projects {
+  background-color: var(--bg-secondary);
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.projects::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.projects__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.projects__header {
+  margin-bottom: 3rem;
+}
+
+/* ---- Grid ---- */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* ---- Tarjeta ---- */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition:
+    border-color var(--transition),
+    transform    var(--transition),
+    box-shadow   var(--transition);
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(230, 57, 70, 0.1);
+}
+
+/* Número + títulos */
+.project-card__top {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.project-card__number {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: 0.35;
+  line-height: 1;
+  transition: opacity var(--transition);
+}
+
+.project-card:hover .project-card__number {
+  opacity: 1;
+}
+
+.project-card__title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.project-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.project-card__subtitle {
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  line-height: 1.4;
+}
+
+/* Descripción */
+.project-card__desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  flex: 1;
+}
+
+/* Stack tags */
+.project-card__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.project-card__tag {
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background: rgba(230, 57, 70, 0.07);
+  border: 1px solid rgba(230, 57, 70, 0.18);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 900px) {
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .projects { padding: 4rem 1.25rem; }
+  .projects__grid { grid-template-columns: 1fr; }
+}

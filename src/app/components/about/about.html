@@ -1,0 +1,60 @@
+<section class="about" id="about">
+  <div class="about__container">
+
+    <!-- Encabezado de sección -->
+    <div class="about__header">
+      <span class="section__label">// sobre mí</span>
+      <h2 class="section__title">
+        Arquitectura y Desarrollo <span>Full Stack</span>
+      </h2>
+    </div>
+
+    <!-- Cuerpo: Historia + Stats -->
+    <div class="about__body">
+      <div class="about__story">
+        <p class="about__story-lead">
+          Como Analista Programador (AIEP), me especializo en diseñar software que no solo
+          funciona, sino que escala. Mi enfoque está en construir
+          <strong>arquitecturas limpias y eficientes</strong>, desde el modelado estricto
+          en bases de datos hasta el despliegue en la nube.
+        </p>
+        <p>
+          Me apasiona llevar proyectos desde la idea hasta producción. En
+          <strong>MisBoletas</strong>, desarrollé una plataforma completa integrando un
+          frontend móvil en <strong>React Native</strong> con un backend robusto en
+          <strong>FastAPI (Python)</strong>, asegurando la integridad de los datos en
+          <strong>SQL Server</strong> y un rendimiento óptimo mediante
+          <strong>Google Cloud Run</strong>.
+        </p>
+        <p>
+          Me muevo con agilidad entre el backend (<strong>Python, Java, C#</strong>) y el
+          frontend (<strong>Angular, React, JS</strong>). Mi objetivo final siempre es el
+          mismo: escribir código <strong>limpio, diagnosticable y mantenible</strong> que
+          asegure el éxito del negocio a largo plazo.
+        </p>
+      </div>
+
+      <!-- Stats -->
+      <div class="about__stats">
+        @for (stat of stats(); track stat.label) {
+          <div class="about__stat">
+            <span class="about__stat-value">{{ stat.value }}</span>
+            <span class="about__stat-label">{{ stat.label }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Cards de highlights -->
+    <div class="about__highlights">
+      @for (item of highlights(); track item.title) {
+        <div class="about__card">
+          <span class="about__card-icon" aria-hidden="true">{{ item.icon }}</span>
+          <h3 class="about__card-title">{{ item.title }}</h3>
+          <p class="about__card-desc">{{ item.description }}</p>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

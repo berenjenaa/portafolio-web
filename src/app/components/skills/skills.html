@@ -1,0 +1,58 @@
+<section class="skills" id="skills">
+  <div class="skills__container">
+
+    <!-- Encabezado -->
+    <div class="skills__header">
+      <span class="section__label">// habilidades técnicas</span>
+      <h2 class="section__title">Mi <span>Stack</span> Tecnológico</h2>
+      <p class="skills__subtitle">
+        <span class="skills__count">{{ totalSkills() }}</span> tecnologías entre frontend, backend y cloud
+      </p>
+    </div>
+
+    <!-- Dos columnas de categorías -->
+    <div class="skills__layout">
+
+      <!-- Categoría 1: Frontend & Mobile -->
+      <div class="skills__category">
+        <div class="skills__category-header">
+          <span class="skills__category-icon" aria-hidden="true">&#9670;</span>
+          <h3 class="skills__category-title">Frontend &amp; Mobile</h3>
+          <span class="skills__category-count">{{ frontendSkills().length }}</span>
+        </div>
+        <div class="skills__grid">
+          @for (skill of frontendSkills(); track skill.name) {
+            <div class="skill-card">
+              <div class="skill-card__abbr">{{ skill.abbr }}</div>
+              <div class="skill-card__info">
+                <span class="skill-card__name">{{ skill.name }}</span>
+                <span class="skill-card__desc">{{ skill.description }}</span>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Categoría 2: Backend, Data & Cloud -->
+      <div class="skills__category">
+        <div class="skills__category-header">
+          <span class="skills__category-icon" aria-hidden="true">&#123;&#125;</span>
+          <h3 class="skills__category-title">Backend, Data &amp; Cloud</h3>
+          <span class="skills__category-count">{{ backendSkills().length }}</span>
+        </div>
+        <div class="skills__grid">
+          @for (skill of backendSkills(); track skill.name) {
+            <div class="skill-card">
+              <div class="skill-card__abbr">{{ skill.abbr }}</div>
+              <div class="skill-card__info">
+                <span class="skill-card__name">{{ skill.name }}</span>
+                <span class="skill-card__desc">{{ skill.description }}</span>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

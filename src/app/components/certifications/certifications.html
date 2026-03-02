@@ -1,0 +1,36 @@
+<section class="certifications" id="certifications">
+  <div class="certifications__container">
+
+    <div class="certifications__header">
+      <span class="section__label">// certificaciones</span>
+      <h2 class="section__title">Credenciales <span>verificadas</span></h2>
+    </div>
+
+    <div class="certifications__grid">
+      @for (cert of certifications(); track cert.credentialId) {
+        <article class="cert-card">
+
+          <div class="cert-card__badge" aria-hidden="true">CERT</div>
+
+          <div class="cert-card__body">
+            <h3 class="cert-card__title">{{ cert.title }}</h3>
+            <p class="cert-card__issuer">{{ cert.issuer }}</p>
+          </div>
+
+          <div class="cert-card__meta">
+            <span class="cert-card__date">
+              <span class="cert-card__meta-label">Emitido</span>
+              {{ cert.date }}
+            </span>
+            <span class="cert-card__id">
+              <span class="cert-card__meta-label">ID&nbsp;</span>
+              {{ cert.credentialId }}
+            </span>
+          </div>
+
+        </article>
+      }
+    </div>
+
+  </div>
+</section>

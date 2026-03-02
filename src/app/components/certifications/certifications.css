@@ -1,0 +1,144 @@
+/* ===========================
+   CERTIFICATIONS COMPONENT
+   =========================== */
+
+.certifications {
+  background-color: var(--bg-primary);
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.certifications::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.certifications__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.certifications__header {
+  margin-bottom: 3rem;
+}
+
+/* ---- Grid ---- */
+.certifications__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* ---- Tarjeta ---- */
+.cert-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition:
+    border-color var(--transition),
+    transform    var(--transition),
+    box-shadow   var(--transition);
+}
+
+.cert-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(230, 57, 70, 0.1);
+}
+
+/* Badge [CERT] */
+.cert-card__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: rgba(230, 57, 70, 0.08);
+  border: 1px solid rgba(230, 57, 70, 0.25);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.cert-card:hover .cert-card__badge {
+  background: rgba(230, 57, 70, 0.15);
+  border-color: rgba(230, 57, 70, 0.5);
+}
+
+/* Cuerpo */
+.cert-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.cert-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.cert-card__issuer {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* Metadatos (fecha + ID) */
+.cert-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.cert-card__date,
+.cert-card__id {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-primary);
+}
+
+.cert-card__meta-label {
+  font-size: 0.7rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  min-width: 48px;
+}
+
+.cert-card__id {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  word-break: break-all;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 680px) {
+  .certifications { padding: 4rem 1.25rem; }
+  .certifications__grid { grid-template-columns: 1fr; }
+}

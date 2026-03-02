@@ -1,0 +1,79 @@
+<section class="hero" id="home">
+  <div class="hero__container">
+
+    <!-- Columna izquierda: Texto -->
+    <div class="hero__content">
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        {{ statusText() }}
+      </div>
+
+      <h1 class="hero__title">
+        Hola, soy<br>
+        <span class="hero__name">{{ name() }}</span>
+      </h1>
+
+      <p class="hero__role">
+        <span class="hero__role-prefix">// </span>{{ currentRole() }}
+      </p>
+
+      <p class="hero__pitch">
+        Egresado de Programación y Análisis de Sistemas (AIEP). Especialista en la
+        creación de aplicaciones escalables y <strong>APIs RESTful</strong>. Transformo
+        requerimientos complejos en arquitecturas de software eficientes, asegurando
+        la integridad de los datos y el rendimiento del sistema desde el
+        <strong>backend</strong> hasta la interfaz de usuario.
+      </p>
+
+      <div class="hero__stack" aria-label="Stack tecnológico">
+        @for (tech of stack(); track tech) {
+          <span class="hero__tag">{{ tech }}</span>
+        }
+      </div>
+
+      <div class="hero__actions">
+        <a href="#projects" class="btn btn--primary">
+          Ver mis Proyectos
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+        <a href="#contact" class="btn btn--outline">Contactar</a>
+      </div>
+    </div>
+
+    <!-- Columna derecha: Widget terminal -->
+    <div class="hero__terminal" aria-hidden="true">
+      <div class="terminal__header">
+        <div class="terminal__dots">
+          <span class="terminal__dot terminal__dot--red"></span>
+          <span class="terminal__dot terminal__dot--yellow"></span>
+          <span class="terminal__dot terminal__dot--green"></span>
+        </div>
+        <span class="terminal__title">benjamin&#64;portfolio:~</span>
+      </div>
+      <div class="terminal__body">
+        <p class="terminal__line">
+          <span class="terminal__prompt">$</span> whoami
+        </p>
+        <p class="terminal__output">benjamin_olave_barraza</p>
+
+        <p class="terminal__line">
+          <span class="terminal__prompt">$</span> cat profile.json
+        </p>
+        <p class="terminal__output terminal__json">&#123;</p>
+        <p class="terminal__output terminal__json">&nbsp;&nbsp;"role": <span class="terminal__string">"Full Stack Developer"</span>,</p>
+        <p class="terminal__output terminal__json">&nbsp;&nbsp;"focus": <span class="terminal__string">"APIs &amp; Backend"</span>,</p>
+        <p class="terminal__output terminal__json">&nbsp;&nbsp;"stack": <span class="terminal__string">"Python · Angular · SQL"</span>,</p>
+        <p class="terminal__output terminal__json">&nbsp;&nbsp;"available": <span class="terminal__bool">true</span></p>
+        <p class="terminal__output terminal__json">&#125;</p>
+
+        <p class="terminal__line">
+          <span class="terminal__prompt">$</span> ./run portfolio.sh<span class="terminal__cursor"></span>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
